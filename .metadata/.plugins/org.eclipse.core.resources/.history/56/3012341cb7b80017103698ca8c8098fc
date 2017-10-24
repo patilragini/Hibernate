@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.tutorial.hibernate.Person" table="Person">
+        <id name="id" type="int" column="person_id">
+            <generator class="native" />
+        </id>
+        <property name="name" column="name" type="string" />
+    
+        <many-to-one name="passport" class="com.tutorial.hibernate.Passport" column="passport_id" unique="true">
+        </many-to-one>        
+    </class>
+    <class name="com.tutorial.hibernate.Passport" table="Passport">
+        <id name="id" type="int" column="passport_id">
+            <generator class="native" />
+        </id>
+ 
+        <property name="number" type="string" column="number" />
+    </class>

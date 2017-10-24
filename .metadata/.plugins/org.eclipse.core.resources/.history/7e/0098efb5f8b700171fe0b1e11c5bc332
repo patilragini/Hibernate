@@ -1,0 +1,65 @@
+/****************************************************************************** 
+ *  @author  Ragini Patil
+ *  @version 1.0
+ *  @since   5-10-2017
+ *	@purpose RegisterDao is class responsible for Database related operations
+ *			 while registration.
+ *			
+ *			 
+ ******************************************************************************/
+package com.bridgelabz.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.bridgelabz.Component.Registration;
+
+public class RegisterDao {
+	private static SessionFactory factory;
+
+	/**
+	 * 
+	 * @param user
+	 *            Registration
+	 * @return boolean
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 *             <p>
+	 *             register accepts object user of type Registration having name
+	 *             ,emailid,phonenumber,password and enter details in database
+	 *             return true if insert is sucessfull
+	 */
+	public static boolean register(Registration user) throws SQLException, ClassNotFoundException {
+		Session session = factory.openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			Registration reg = new Registration();
+			user.setName(user.getName());
+			user.setEmail(user.getEmail());
+			user.setPassword(user.getPassword());
+			user.setphoneNumber(user.getphoneNumber());
+			session.save(reg);
+
+			tx.commit();
+			return true;
+		} catch (Exception e) {
+			if (null != tx) {
+				tx.rollback();
+				System.out.println("Rollback !!!");
+			}
+		} finally {
+			session.close();
+		}
+		return false;
+
+	}
+
+}

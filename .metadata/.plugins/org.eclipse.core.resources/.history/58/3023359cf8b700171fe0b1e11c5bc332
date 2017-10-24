@@ -1,0 +1,89 @@
+/****************************************************************************** 
+ *  @author  Ragini Patil
+ *  @version 1.0
+ *  @since   5-10-2017
+ *	@purpose RegisterDao is class responsible for Database related operations
+ *			 while registration.
+ *			
+ *			 
+ ******************************************************************************/
+package com.bridgelabz.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.bridgelabz.CURD.Customer;
+import com.bridgelabz.Component.Registration;
+
+public class RegisterDao {
+	private static SessionFactory factory;
+
+	/**
+	 * 
+	 * @param user
+	 *            Registration
+	 * @return boolean
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 *             <p>
+	 *             register accepts object user of type Registration having name
+	 *             ,emailid,phonenumber,password and enter details in database
+	 *             return true if insert is sucessfull
+	 */
+	public static boolean register(Registration user) throws SQLException, ClassNotFoundException {
+		Session session = factory.openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+
+			Registration reg = new Registration();
+		
+
+			// save to database
+			session.save(reg);
+			tx.commit();
+		} catch (Exception e) {
+			if (null != tx) {
+				tx.rollback();
+				System.out.println("Rollback !!!");
+			}
+		} finally {
+			session.close();
+		}
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection connection = null;
+		String url = "jdbc:mysql://localhost:3306/Maven";
+		String driver = "com.mysql.jdbc.Driver";
+		String userName = "root";
+		String password = "root";
+		connection = DriverManager.getConnection(url, userName, password);
+
+		try {
+			String SQL = "insert into registration (name,email_id,password,phone_number) values(?,?,?,?)";
+
+			java.sql.PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setString(1, user.getName());
+			preparedStatement.setString(2, user.getEmail());
+			preparedStatement.setString(3, user.getPassword());
+			preparedStatement.setLong(4, user.getphoneNumber());
+			// number of rows affected
+			int rows = preparedStatement.executeUpdate();
+
+			return true;
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+			return false;
+		}
+	}
+
+}

@@ -1,0 +1,116 @@
+/****************************************************************************** 
+ *  @author  Ragini Patil
+ *  @version 1.0
+ *  @since   5-10-2017
+ *	@purpose LoginDao is class responsible for Database related operations
+ *			 while loging in.
+ *			
+ *			 
+ ******************************************************************************/
+package com.bridgelabz.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import com.bridgelabz.CURD.Customer;
+import com.bridgelabz.Component.Registration;
+
+public class LoginDao {
+	private static SessionFactory factory;
+
+	/**
+	 * @param email
+	 * @param password
+	 * @return name
+	 *         <p>
+	 *         This function accepts user email id and password checks in
+	 *         database if exist or not. If the user email id and password is
+	 *         found in database ,it will return name of user.
+	 */
+
+	public static String validate(String email, String password) {
+		try {
+			factory = new Configuration().configure().buildSessionFactory();
+			System.out.println(factory);
+		} catch (Exception e) {
+			System.out.println("factory errorr!!!");
+		}
+
+		Session session = factory.openSession();
+		// HQL QUERY
+		String queryString = "from Customer where email='" + email + "'";
+		Query query = session.createQuery(queryString);
+		List<Registration> customer = query.list();
+		System.out.println("no of rows affected:" + customer.size());
+		for (int i = 0; i < customer.size(); i++) {
+			System.out.println(customer.get(i));
+			System.out.println();
+		}
+		session.close();
+		
+		
+		
+		
+
+		boolean status = false;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+
+		String url = "jdbc:mysql://localhost:3306/";
+		String dbName = "google_signup";
+		String driver = "com.mysql.jdbc.Driver";
+		String userNameDB = "root";
+		String passwordDB = "root";
+
+		try {
+			Class.forName(driver).newInstance();
+			connection = DriverManager.getConnection(url + dbName, userNameDB, passwordDB);
+			preparedStatement = connection
+					.prepareStatement("select * from registration where email_id=? and password=?");
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, password);
+			resultSet = preparedStatement.executeQuery();
+			status = resultSet.next();
+			String nameResult = resultSet.getString(2);
+
+			return nameResult;
+
+		} catch (Exception e) {
+
+		} finally {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (preparedStatement != null) {
+				try {
+					preparedStatement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (resultSet != null) {
+				try {
+					resultSet.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return null;
+	}
+
+}

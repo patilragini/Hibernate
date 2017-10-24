@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HibernateGoogleSignupProject">
+        <property name="context-root" value="HibernateGoogleSignupProject"/>
+        <property name="java-output-path" value="/HibernateGoogleSignupProject/target/classes"/>
+    </wb-module>
+</project-modules>

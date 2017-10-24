@@ -1,0 +1,40 @@
+package com.bridgelabz.Hibernate1;
+
+
+import java.util.Properties;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+ 
+public class TestStudent {
+ 
+     public static void main(String a[])
+    {
+ 
+       Properties prop = new Properties();        
+       prop.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+       prop.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+       prop.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/Maven");
+       prop.setProperty("hibernate.connection.username", "root");
+       prop.setProperty("hibernate.connection.password", "root");
+       prop.setProperty("hibernate.hbm2ddl.auto", "update");
+       prop.setProperty("hibernate.show_sql", "true");
+ 
+       Configuration cfg = new Configuration();        
+       cfg.addResource("student.hbm.xml");
+       
+       cfg.setProperties(prop);        
+       Student s = new Student();        
+       s.setName("student1");
+ 
+       SessionFactory factory = cfg.buildSessionFactory();
+ 
+       Session session = factory.openSession();
+       
+       session.save(s);
+       s.setName("studen987");
+ 
+       session.flush();
+       factory.close();
+    }
+}

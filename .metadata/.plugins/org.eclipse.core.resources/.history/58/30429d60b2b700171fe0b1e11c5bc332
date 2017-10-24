@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+<hibernate-mapping>
+   <class name="com.bridgelabz.Hibernate1.Student" table="tabel1" >
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="name" column="name" type="string"/>
+        <property name="emailAddress" column="email" type="string"  insert="true" update="true"/> 
+   </class>
+</hibernate-mapping>
