@@ -22,23 +22,23 @@ public class Test {
      
       Stadium stadium = new Stadium();
 
-      stadium.setCapacity(2300);
-      stadium.setCountry("Australia");
-      stadium.setName("Sydney");
+      stadium.setCapacity(1234);
+      stadium.setCountry("UAE");
+      stadium.setName("Sharjah");
 
       CricketMatch match1 = new CricketMatch();
 
-      match1.setTeam1("India");
+      match1.setTeam1("bangladesh");
       match1.setTeam2("Australia");
-      match1.setType("Test Match");
+      match1.setType("T20");
       match1.setUmpire("Billy Bowden");
       
       CricketMatch match2 = new CricketMatch();
 
-      match2.setTeam1("West Indies");
+      match2.setTeam1("england");
       match2.setTeam2("South Africa");
       match2.setType("T 20");
-      match2.setUmpire("Stuart Willy");
+      match2.setUmpire("Stuart ");
 
       Set<CricketMatch> matches = new HashSet<CricketMatch>();
       

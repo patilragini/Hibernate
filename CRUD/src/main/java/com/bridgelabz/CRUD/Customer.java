@@ -1,4 +1,4 @@
-package com.bridgelabz.CURD;
+package com.bridgelabz.CRUD;
 
 public class Customer {
 	private int id;

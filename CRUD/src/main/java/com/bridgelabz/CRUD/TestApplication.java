@@ -1,4 +1,4 @@
-package com.bridgelabz.CURD;
+package com.bridgelabz.CRUD;
 
 import java.util.List;
 import java.util.Scanner;

@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
 import com.bridgelabz.DAO.LoginDao;
 import com.bridgelabz.Model.Registration;
 
-
 /**
  * Servlet implementation class LoginServlet
  */
@@ -54,10 +53,9 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("in login servlet");
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		if (request.getParameter("action") != null) {		
+		if (request.getParameter("action") != null) {
 			String email = request.getParameter("email");
 			String password = request.getParameter("userpass");
 			/*
@@ -65,16 +63,16 @@ public class LoginServlet extends HttpServlet {
 			 * exists, then it returns the reference of that session object, if
 			 * not, this methods will return null.
 			 */
-			HttpSession session = request.getSession();			
+			HttpSession session = request.getSession();
 			if (session != null) {
 				session.setAttribute("email", email);
 			}
 			String nameResult = LoginDao.validate(email, password);
 
-			session.setAttribute("name",nameResult);
+			session.setAttribute("name", nameResult);
 
-			if (nameResult!=null) {
-			logger.info("Success login");
+			if (nameResult != null) {
+				logger.info("Success login");
 				session.removeAttribute("errorLogin");
 				logger.info("Login access  successfull");
 				RequestDispatcher requestDipatcher = request.getRequestDispatcher("welcome.jsp");
@@ -82,12 +80,11 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				String errorMsg = "Invalid username or password !!!";
 				session.setAttribute("errorLogin", errorMsg);
-			logger.error("Error invalid username password ");				
+				logger.error("Error invalid username password ");
 				RequestDispatcher requestDipatcher = request.getRequestDispatcher("index.jsp");
 				requestDipatcher.forward(request, response);
 			}
-		}
-		else{
+		} else {
 			RequestDispatcher requestDipatcher = request.getRequestDispatcher("index.jsp");
 			requestDipatcher.forward(request, response);
 		}

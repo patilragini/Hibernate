@@ -1,0 +1,90 @@
+<html>
+ <head>
+  <title>Sample</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  function checkemail()
+  {
+	  var email=document.getElementById( "UserEmail" ).value; 
+	  console.log("gfg");
+  $.ajax({
+	  url: "Availablity",type: "post", data: {email:document.getElementById( "UserEmail" ).value},
+	  success: function(response){
+	     // alert("success");
+	       $("#email_status").html('submitted successfully'+response);
+	  },
+	  error:function(){
+		 // alert("error");
+	      $("#email_status").html('there is error while submit'+response);
+	  }   
+	}); 
+  }
+  /* function checkemail()
+  {
+   var email=document.getElementById( "UserEmail" ).value;  	
+   if(email)
+   {
+    $.ajax({
+    type: 'post',
+    url: 'com.bridgelabz.Availablity.Check',
+    data: {
+     user_email:email,
+    },
+    success: function (response) {
+     $( '#email_status' ).html(response);
+     if(response==true)	
+     {
+      return true;	
+     }
+     else
+     {
+      return false;	
+     }
+    }
+    });
+   }
+   else
+   {
+    $( '#email_status' ).html("");
+    return false;
+   }
+  } */
+  </script>
+  <script>
+    $(document).ready(function() {
+    $("#btnClick" ).click(function() {
+    	       alert("You clicked me!!" );
+     });
+    });
+  </script>
+  <script>
+$(document).ready(function(){
+    $("p").click(function(){
+    	$(this).hide("slow");//$("*").hide(); to hideall
+    	$("#second").show("slow");
+    });
+});
+$(document).ready(function(){
+    $("#second").click(function(){
+    	$(this).fadeToggle("slow");
+    	$("#third").toggle(6000);
+      //   $("div").fadeToggle("slow");
+      //$(".info").fadeToggle("slow"); for class
+    });
+});
+</script>
+ </head>
+ <body>
+    <button id="btnClick">Click Me!!</button>
+    
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+  <div id="second" class="info">Second Box</div><br />
+  <div id="third" class="info">third Box</div><br />
+  <p class="info">Third Paragraph</p>
+ <br>
+ Enter email:<input type="text" name="useremail" id="UserEmail" onkeyup="checkemail();">
+ <span id="email_status"></span>
+ </body>
+</html>

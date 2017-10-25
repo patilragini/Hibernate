@@ -17,12 +17,14 @@ public class Test {
 
        Stadium stadium = new Stadium();
       
-
+       stadium.setCapacity(100);
+       stadium.setCountry("india");
+       stadium.setName("Wankhede");
        CricketMatch match = new CricketMatch();
 
-       match.setTeam1("india");
-       match.setTeam2("shrilanka");
-       match.setType("Test Match");
+       match.setTeam1("bangladesh");
+       match.setTeam2("england");
+       match.setType("ODI");
        match.setUmpire("billy");
        match.setStadium(stadium);
 

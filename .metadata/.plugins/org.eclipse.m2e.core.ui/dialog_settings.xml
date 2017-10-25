@@ -44,6 +44,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/home/bridgeit/raginiHibernate/EmailAvailablity"/>
+			<item value="/home/bridgeit/raginiHibernate/JQuery"/>
 			<item value="/home/bridgeit/raginiHibernate/OneToOne"/>
 			<item value="/home/bridgeit/raginiHibernate/CRUD"/>
 			<item value="/home/bridgeit/raginiHibernate/Servers"/>
@@ -64,6 +66,11 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.bridgelabz.Available"/>
+			<item value="com.bridgelabz.AvailableData"/>
+			<item value="com.bridgelabz.EmailAvailable"/>
+			<item value="com.bridgelabz.AvailableEmail"/>
+			<item value="com.bridgelabz.EmailAvailablity"/>
 			<item value="com.bridgelabz.ManyToMany"/>
 			<item value="com.bridgelabz.OneToMany"/>
 		</list>
@@ -71,6 +78,11 @@
 			<item value="com.bridgelabz"/>
 		</list>
 		<list key="artifactId">
+			<item value="Available"/>
+			<item value="AvailableData"/>
+			<item value="EmailAvailable"/>
+			<item value="AvailableEmail"/>
+			<item value="EmailAvailablity"/>
 			<item value="ManyToMany"/>
 			<item value="OneToMany"/>
 		</list>
