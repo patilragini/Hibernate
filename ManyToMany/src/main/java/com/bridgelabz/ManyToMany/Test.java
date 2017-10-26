@@ -21,9 +21,10 @@ public class Test {
         Transaction tx = session.beginTransaction();
   
         Role role1 = new Role();
-        role1.setName("Manager Engineer");        
+        role1.setName("Engineer");   
+        
         Role role2 = new Role();
-        role2.setName("HR");
+        role2.setName("accounts");
  
         Set<Role> roles = new HashSet<Role>();
  
@@ -31,7 +32,7 @@ public class Test {
         roles.add(role1);
   
         Employee employee = new Employee();
-        employee.setName("ABC");
+        employee.setName("lmn");
         employee.setRoles(roles);
  
         session.save(role1);

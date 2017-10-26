@@ -30,7 +30,7 @@ public class Check extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
+
 	}
 
 	/**
@@ -38,19 +38,19 @@ public class Check extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {	
+			throws ServletException, IOException {
 		String email = request.getParameter("email");
-		System.out.println("in post " + email);
 		PrintWriter outPrintWriter = response.getWriter();
-		boolean exist=EmailAvailablity.validate(email);
-		System.out.println(exist);
-		if(exist=true){
-		response.getWriter().print("{success: true}");
-		System.out.println("return true found");
-		}
-		else{
-			response.getWriter().print("{success: false}");
-		System.out.println("return false ");
+		System.out.println(email);
+		if (EmailAvailablity.checkemail(email)) {
+			boolean exist = EmailAvailablity.validate(email);
+			if (exist) {
+				response.getWriter().print("{success: true}");
+			} else {
+				response.getWriter().print("{success: false}");
+			}
+		} else {
+			response.getWriter().print("{success: invalid}");
 		}
 
 	}

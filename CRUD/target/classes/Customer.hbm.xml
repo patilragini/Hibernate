@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
  
 <hibernate-mapping>
-   <class name="com.bridgelabz.CURD.Customer" table="curd_customer">
+   <class name="com.bridgelabz.CRUD.Customer" table="curd_customer">
       <meta attribute="class-description">
          Mapping between persistent class - Customer with MySQL table - customer 
       </meta>

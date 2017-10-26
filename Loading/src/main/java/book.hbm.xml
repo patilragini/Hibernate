@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+<hibernate-mapping>
+   <class name="com.bridgelabz.Loading.Book" table="book">
+ 
+<id name="isbn" type="int" column="isbn">
+         <generator class="native"/>
+      </id>
+      <property name="name" column="name" type="string"/>
+      <property name="author" column="author" type="string" /> 
+   </class>
+</hibernate-mapping>

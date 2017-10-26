@@ -6,6 +6,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration Page</title>
 <script type="text/javascript" src="Script/loginScript.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">function checkemail()
+{
+	  var email=document.getElementById( "UserEmail" ).value; 
+	  if(email)
+	   {
+$.ajax({
+	  url: "Check",type: "post", data: {email:document.getElementById( "UserEmail" ).value},
+	  success: function(response){
+		  if(response=="{success: true}")
+	      $("#email_status").html('Existing account');
+		  else  if(response=="{success: false}")
+			  $("#email_status").html('Account valid');
+		  else
+		  $("#email_status").html('Account invalid');
+	  },
+	  error:function(){
+		    $("#email_status").html('there is error while submit'+response);
+	  }   
+	}); 
+}
+	   else
+	   {
+	    $( '#email_status' ).html("");
+	    return false;
+	   }
+}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/registrationPage.css">
 <link rel="stylesheet"
@@ -19,7 +46,7 @@
 		<div class="panel-body">
 			<h2 align="center">Registration Form</h2>
 			<div class="container">
-				<fieldset> 
+				<fieldset>
 					<form action="RegisterServlet" method="post" name="myform"
 						onsubmit="return validateform();">
 						<div class="form-group">
@@ -37,9 +64,10 @@
 						%>
 
 						<div class="form-group">
-							<label>Email id</label><input type="email" name="email"
-								class="form-control" placeholder="Enter EmailId" />
+							<label>Email id</label><input type="email" name="email" id="UserEmail"
+								class="form-control" placeholder="Enter EmailId" onkeyup="checkemail();" />
 						</div>
+						<span id="email_status"></span>
 						<span id="email" style="color: red"></span>
 						<%
 							String emailError = (String) session.getAttribute("error2");
@@ -47,7 +75,7 @@
 								out.print("<p style=\"color:red\"> " + emailError + " </p><br>");
 							session.removeAttribute("error2");
 						%>
-
+						<span id="email_status"></span>
 						<div class="form-group">
 							<label>PhoneNumber</label><input type="number" name="phoneNumber"
 								class="form-control" placeholder="Enter 10 digit phone number"
@@ -57,7 +85,7 @@
 						<%
 							String phoneNumberError = (String) session.getAttribute("error3");
 							if (phoneNumberError != null)
-							out.print("<p style=\"color:red\">" + phoneNumberError + "</p><br>");
+								out.print("<p style=\"color:red\">" + phoneNumberError + "</p><br>");
 							session.removeAttribute("error3");
 						%>
 						<div class="form-group">
@@ -77,10 +105,9 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<a href="/index.jsp">Already have an
-								account</a>
+							<a href="index.jsp">Already have an account</a>
 						</div>
-						
+
 					</form>
 				</fieldset>
 			</div>

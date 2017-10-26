@@ -115,3 +115,74 @@ Oct 25, 2017 12:47:49.98 [7811:7851:1025/124749.978528:ERROR:browser_gpu_channel
 Oct 25, 2017 12:47:50.12 Created new window in existing browser session.
 Oct 25, 2017 12:48:35.03 [7997:8036:1025/124835.033920:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Oct 25, 2017 12:48:35.09 Created new window in existing browser session.
+
+Oct 26, 2017 10:06:03.86 NEW SESSION
+Oct 26, 2017 10:06:03.86 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+Oct 26, 2017 10:06:45.48 1508992605484	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+Oct 26, 2017 10:06:45.99 1508992605999	addons.update-checker	WARN	Update manifest for followonsearch@mozilla.com did not contain an updates property
+Oct 26, 2017 10:06:46.13 1508992606133	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+Oct 26, 2017 10:06:46.55 1508992606559	addons.update-checker	WARN	Update manifest for clicktoplay-rollout@mozilla.org did not contain an updates property
+Oct 26, 2017 10:06:46.62 1508992606622	addons.update-checker	WARN	Update manifest for onboarding@mozilla.org did not contain an updates property
+Oct 26, 2017 10:06:46.69 1508992606696	addons.update-checker	WARN	Update manifest for activity-stream@mozilla.org did not contain an updates property
+Oct 26, 2017 10:06:47.13 1508992607135	addons.update-checker	WARN	Update manifest for formautofill@mozilla.org did not contain an updates property
+Oct 26, 2017 10:06:47.74 1508992607745	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+Oct 26, 2017 10:06:49.97 1508992609978	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+Oct 26, 2017 10:06:51.62 1508992611627	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+Oct 26, 2017 10:09:03.63 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: recipe-client-addon-run
+Oct 26, 2017 10:09:03.70 *** UTM:SVC TimerManager:registerTimer - id: telemetry_modules_ping
+Oct 26, 2017 10:09:03.70 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+Oct 26, 2017 10:09:21.92 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+Oct 26, 2017 10:13:01.80 [23952:23991:1026/101301.808612:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 10:13:01.88 Created new window in existing browser session.
+Oct 26, 2017 10:17:20.55 [24422:24461:1026/101720.559087:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 10:17:20.59 Created new window in existing browser session.
+Oct 26, 2017 10:44:29.85 [26359:26398:1026/104429.851489:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 10:44:29.96 Created new window in existing browser session.
+Oct 26, 2017 10:48:38.53 [26649:26688:1026/104838.531974:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 10:48:38.55 Created new window in existing browser session.
+Oct 26, 2017 10:51:17.62 [26831:26871:1026/105117.624482:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 10:51:17.67 Created new window in existing browser session.
+Oct 26, 2017 10:51:50.97 [24695:24734:1026/105150.972614:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -100
+Oct 26, 2017 10:53:21.57 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Oct 26, 2017 10:55:46.50 [27065:27109:1026/105546.503646:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 10:55:46.58 Created new window in existing browser session.
+Oct 26, 2017 11:02:16.08 [24695:24695:1026/110216.086614:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Oct 26, 2017 11:09:51.15 [27612:27651:1026/110951.154907:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 11:09:51.23 Created new window in existing browser session.
+Oct 26, 2017 11:17:55.78 [28118:28157:1026/111755.789683:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 11:17:55.85 Created new window in existing browser session.
+Oct 26, 2017 11:25:02.65 [28435:28475:1026/112502.651237:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 11:25:02.70 Created new window in existing browser session.
+Oct 26, 2017 11:31:53.76 [24695:24695:1026/113153.767478:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Oct 26, 2017 11:53:02.37 [30118:30179:1026/115302.371591:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 11:53:02.43 Created new window in existing browser session.
+Oct 26, 2017 15:41:50.87 [2923:2962:1026/154150.872247:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 15:41:50.91 Created new window in existing browser session.
+Oct 26, 2017 15:51:54.37 [3372:3411:1026/155154.370213:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 15:51:54.43 Created new window in existing browser session.
+Oct 26, 2017 16:01:55.68 [3732:3771:1026/160155.688733:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 16:01:55.76 Created new window in existing browser session.
+
+Oct 26, 2017 16:36:58.29 NEW SESSION
+Oct 26, 2017 16:36:58.29 [3070:3110:1026/163658.296889:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 16:36:58.51 Created new window in existing browser session.
+Oct 26, 2017 16:44:00.81 [3383:3422:1026/164400.817280:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 16:44:00.99 Created new window in existing browser session.
+Oct 26, 2017 16:59:01.08 [4059:4099:1026/165901.080906:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 16:59:01.15 Created new window in existing browser session.
+Oct 26, 2017 17:00:18.39 [4256:4295:1026/170018.394333:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:00:18.43 Created new window in existing browser session.
+Oct 26, 2017 17:07:08.45 [4457:4497:1026/170708.453947:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:07:08.52 Created new window in existing browser session.
+Oct 26, 2017 17:14:45.56 [4901:4941:1026/171445.565320:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:14:45.64 Created new window in existing browser session.
+Oct 26, 2017 17:18:24.87 [5159:5198:1026/171824.877061:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:18:24.94 Created new window in existing browser session.
+Oct 26, 2017 17:19:01.09 [5259:5298:1026/171901.099847:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:19:01.18 Created new window in existing browser session.
+Oct 26, 2017 17:39:29.17 [6077:6117:1026/173929.170123:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:39:29.19 Created new window in existing browser session.
+Oct 26, 2017 17:45:33.53 [6369:6408:1026/174533.538055:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:45:33.60 Created new window in existing browser session.
+Oct 26, 2017 17:46:17.09 [6519:6559:1026/174617.087152:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Oct 26, 2017 17:46:17.15 Created new window in existing browser session.

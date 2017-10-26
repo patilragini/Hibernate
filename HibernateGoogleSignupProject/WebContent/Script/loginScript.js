@@ -36,3 +36,29 @@ function validateform() {
 	}
 	return isvalid;
 }
+function checkemail()
+{
+	  var email=document.getElementById( "UserEmail" ).value; 
+	  if(email)
+	   {
+$.ajax({
+	  url: "Check",type: "post", data: {email:document.getElementById( "UserEmail" ).value},
+	  success: function(response){
+		  if(response=="{success: true}")
+	      $("#email_status").html('Existing account');
+		  else  if(response=="{success: false}")
+			  $("#email_status").html('Account valid');
+		  else
+		  $("#email_status").html('Account invalid');
+	  },
+	  error:function(){
+		    $("#email_status").html('there is error while submit'+response);
+	  }   
+	}); 
+}
+	   else
+	   {
+	    $( '#email_status' ).html("");
+	    return false;
+	   }
+}
