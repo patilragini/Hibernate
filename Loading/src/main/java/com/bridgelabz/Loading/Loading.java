@@ -9,15 +9,16 @@ public class Loading {
 		Configuration cfg = new Configuration().configure();        
         SessionFactory factory = cfg.buildSessionFactory();
         Session session = factory.openSession();
- 
-        Book book = (Book)session.get(Book.class, 5);
+ /*only to retrieve an instance that you assume exists, where non-existence would be an actual error
+  * Always returns a proxy object*/
+        Book book = (Book)session.load(Book.class, 5);
         System.out.println(Book.class);
         System.out.println(book);
         System.out.println("Book Name =" + book.getName());
 		System.out.println("Book Author =" + book.getAuthor());
         System.out.println("Fetching Book with isbn number 5 ");
         System.out.println();
-        book = (Book)session.get(Book.class, 6);
+        book = (Book)session.load(Book.class, 6);
         System.out.println(book);
         System.out.println("Book Name =" + book.getName());
 		System.out.println("Book Author =" + book.getAuthor());

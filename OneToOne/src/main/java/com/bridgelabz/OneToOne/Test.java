@@ -19,10 +19,10 @@ public class Test {
         Transaction tx = session.beginTransaction();
  
         Passport passport = new Passport();
-        passport.setNumber("BDHY123");
+        passport.setNumber("123");
         
         Person person = new Person();
-        person.setName("RAGINI");
+        person.setName("abc123");
         person.setPassport(passport);
  
         session.save(passport);

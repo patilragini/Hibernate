@@ -24,22 +24,18 @@ public class EmailAvailablity {
 	 */
 
 	public static boolean validate(String email) {		
-		Configuration cfg=new Configuration();
-		System.out.println(cfg);
-		cfg.configure();
-		System.out.println(cfg);
-		factory = cfg.buildSessionFactory();
+		Configuration configuration=new Configuration();
+		configuration.configure();
+		factory = configuration.buildSessionFactory();
 		Session session = factory.openSession();
 		Query query = session.createQuery("select R.email from Registration R where email=:email");
 		query.setParameter("email", email);
 		List<Registration> list = query.getResultList();
-		System.out.println(list);
-		if (list.isEmpty()) {
+			if (list.isEmpty()) {
 			return false;
 		} else {
 			session.close();
 			String a = list.toString();
-			System.out.println("here" + a);
 			return true;
 		}
 

@@ -20,6 +20,9 @@ public class LoadingGet {
 		Book book = (Book) session.get(Book.class, 6);
 		System.out.println();
 		System.out.println("Book Name =" + book.getName());
+		/*eager initialization  null if there is no such persistent instance
+		 * (If the instance, or a proxy for the instance, is already associated with the session,
+		 *  return that instance or proxy.)*/
 		System.out.println("Book Author =" + book.getAuthor());
 
 		System.out.println("Fetching Book with isbn number 5 ");
@@ -29,6 +32,7 @@ public class LoadingGet {
 		 * given identifier. In case object does not found, returns null.*/
 		 
 		book = (Book) session.get(Book.class, 5);
+		book=(Book)session.load(Book.class, 11);
 		System.out.println();
 		tx.commit();
 		session.close();

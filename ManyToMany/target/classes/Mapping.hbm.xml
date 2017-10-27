@@ -11,9 +11,9 @@
  
         <property name="name" column="name" type="string" />
  
-        <set name="roles" table="role_employee">
+        <set name="roles" table="role_employee" inverse="true">
             <key column="person_id" />
-           <many-to-many column="role_id" class="com.bridgelabz.ManyToMany.Role">
+           <many-to-many column="role_id" class="com.bridgelabz.ManyToMany.Role" >
            </many-to-many>
         </set>
     </class>
@@ -22,5 +22,10 @@
             <generator class="native" />
         </id>
         <property name="name" type="string" column="name" />
+         <set name="employee" table="role_employee" inverse="false">
+            <key column="role_id" />
+           <many-to-many column="person_id" class="com.bridgelabz.ManyToMany.Employee" >
+           </many-to-many>
+        </set>
     </class>
-</hibernate-mapping>
+</hibernate-mapping>	

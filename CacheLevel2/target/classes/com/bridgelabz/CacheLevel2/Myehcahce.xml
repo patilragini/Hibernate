@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ehcache.xsd">
+ 
+    <diskStore path="java.io.tmpdir/ehcache" />
+  
+    
+   <defaultCache
+     maxElementsInMemory="500"
+     eternal="false"
+     timeToIdleSeconds="220"
+     timeToLiveSeconds="320"
+     overflowToDisk="true"
+   />
+ 
+    <cache name="com.bridgelabz.CacheLevel2.Student"
+      maxElementsInMemory="500"
+      eternal="false"
+      timeToIdleSeconds="1800"
+      timeToLiveSeconds="2400"
+      overflowToDisk="false"
+    />
+</ehcache>

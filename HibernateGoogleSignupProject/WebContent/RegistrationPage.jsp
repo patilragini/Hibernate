@@ -6,33 +6,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration Page</title>
 <script type="text/javascript" src="Script/loginScript.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">function checkemail()
-{
-	  var email=document.getElementById( "UserEmail" ).value; 
-	  if(email)
-	   {
-$.ajax({
-	  url: "Check",type: "post", data: {email:document.getElementById( "UserEmail" ).value},
-	  success: function(response){
-		  if(response=="{success: true}")
-	      $("#email_status").html('Existing account');
-		  else  if(response=="{success: false}")
-			  $("#email_status").html('Account valid');
-		  else
-		  $("#email_status").html('Account invalid');
-	  },
-	  error:function(){
-		    $("#email_status").html('there is error while submit'+response);
-	  }   
-	}); 
-}
-	   else
-	   {
-	    $( '#email_status' ).html("");
-	    return false;
-	   }
-}</script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function checkemail() {
+		var email = document.getElementById("UserEmail").value;
+		if (email) {
+			$.ajax({
+				url : "Check",
+				type : "post",
+				data : {
+					email : document.getElementById("UserEmail").value
+				},
+				success : function(response) {
+					if (response == "{success: true}")
+						$("#email").html('Existing account');
+					else if (response == "{success: false}")
+						$("#email").html('Account valid');
+					else
+						$("#email").html('Account invalid');
+				},
+				error : function() {
+					$("#email").html('there is error while submit' + response);
+				}
+			});
+		} else {
+			$('#email_status').html("");
+			return false;
+		}
+	}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/registrationPage.css">
 <link rel="stylesheet"
@@ -47,6 +50,7 @@ $.ajax({
 			<h2 align="center">Registration Form</h2>
 			<div class="container">
 				<fieldset>
+
 					<form action="RegisterServlet" method="post" name="myform"
 						onsubmit="return validateform();">
 						<div class="form-group">
@@ -64,10 +68,10 @@ $.ajax({
 						%>
 
 						<div class="form-group">
-							<label>Email id</label><input type="email" name="email" id="UserEmail"
-								class="form-control" placeholder="Enter EmailId" onkeyup="checkemail();" />
+							<label>Email id</label><input type="email" name="email"
+								id="UserEmail" class="form-control" placeholder="Enter EmailId"
+								onkeyup="checkemail();" />
 						</div>
-						<span id="email_status"></span>
 						<span id="email" style="color: red"></span>
 						<%
 							String emailError = (String) session.getAttribute("error2");

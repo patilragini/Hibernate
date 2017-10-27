@@ -44,12 +44,13 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/home/bridgeit/raginiHibernate/Loading"/>
+			<item value="/home/bridgeit/raginiHibernate/ManyToOne"/>
 			<item value="/home/bridgeit/raginiHibernate/CRUD"/>
 			<item value="/home/bridgeit/raginiHibernate/EmailAvailablity"/>
 			<item value="/home/bridgeit/raginiHibernate/JQuery"/>
 			<item value="/home/bridgeit/raginiHibernate/OneToOne"/>
 			<item value="/home/bridgeit/raginiHibernate/Servers"/>
-			<item value="/home/bridgeit/raginiHibernate/ManyToOne"/>
 			<item value="/home/bridgeit/raginiHibernate/Hibernate1"/>
 			<item value="/home/bridgeit/raginiServlet/GoogleSignupProject"/>
 			<item value="/home/bridgeit/raginiHibernate/CURD"/>
@@ -66,6 +67,8 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.bridgelabz.CacheLevel2"/>
+			<item value="com.bridgelabz.ManyTo1"/>
 			<item value="com.bridgelabz.Loading"/>
 			<item value="com.bridgelabz.Available"/>
 			<item value="com.bridgelabz.AvailableData"/>
@@ -79,6 +82,8 @@
 			<item value="com.bridgelabz"/>
 		</list>
 		<list key="artifactId">
+			<item value="CacheLevel2"/>
+			<item value="ManyTo1"/>
 			<item value="Loading"/>
 			<item value="Available"/>
 			<item value="AvailableData"/>

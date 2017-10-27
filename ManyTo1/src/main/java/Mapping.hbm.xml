@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.bridgelabz.ManyTo1.CricketMatch" table="CricketMatch">
+<id name="id" type="int" column="match_id">
+<generator class="native"></generator>
+</id>
+<property name="team1" type="string" column="team1"></property>
+<property name="team2" type="string" column="team2"></property>
+<property name="type" type="string" column="type"></property>
+<property name="umpire" type="string" column="umpire"></property>
+<many-to-one name="stadium" class="com.bridgelabz.ManyTo1.Stadium" column="stadium_id"></many-to-one>
+</class>
+<class name="com.bridgelabz.ManyTo1.Stadium" table="Stadium_tabel">
+<id name="id" type="int" column="stadium_id">
+<generator class="native"></generator>
+</id>
+<property name="name" type="string" column="stadium_name"></property>
+<property name="capacity" type="int" column="capacity"></property>
+<property name="country" type="string" column="country"></property>
+</class>
+</hibernate-mapping>

@@ -21,3 +21,7 @@
 1509001034287	Delete resource 'AjaxJquery'
 1509015019914	Delete resource 'hygfd'
 1509023433618	Delete resource 'EmailAvailablity'
+1509076287506	Rename resource 'Canching'
+1509077299027	Delete resource 'CacheHibernate'
+1509095073120	Delete resource 'ManyToOne'
+1509103294760	Rename resource 'Hibernate1'
